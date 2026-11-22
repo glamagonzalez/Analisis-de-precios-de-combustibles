@@ -1,0 +1,69 @@
+{
+  "periodo_entrenamiento": "2024-2025",
+  "periodo_evaluacion_real": "2026",
+  "periodo_pronostico": "2027",
+  "filas_entrenamiento": 19990,
+  "filas_evaluacion_2026": 6149,
+  "estaciones_unicas_entrenamiento": 2556,
+  "estaciones_unicas_evaluacion_2026": 909,
+  "clasificacion": "Cara si el precio supera la mediana correspondiente de 2025",
+  "validacion_temporal_2025": {
+    "regresion": {
+      "baseline_mae": 330.97,
+      "random_forest_mae": 236.11,
+      "random_forest_rmse": 260.84
+    },
+    "clasificacion": {
+      "baseline_exactitud": 0.0413,
+      "random_forest_exactitud": 0.4292,
+      "random_forest_f1_cara": 0.5783
+    }
+  },
+  "cobertura_2026": {
+    "1": 164,
+    "2": 286,
+    "3": 664,
+    "4": 388,
+    "5": 941,
+    "6": 514,
+    "7": 1230,
+    "8": 1409,
+    "9": 553
+  },
+  "proyeccion_2027": "Modelo entrenado con datos reales 2024-2025; no usa precios reales futuros",
+  "metricas": {
+    "regresion": {
+      "baseline_mediana": {
+        "mae": 844.82,
+        "rmse": 882.62
+      },
+      "random_forest": {
+        "mae": 712.0,
+        "rmse": 763.94,
+        "r2": -0.7165
+      }
+    },
+    "clasificacion": {
+      "baseline_mas_frecuente": {
+        "exactitud": 0.0215
+      },
+      "random_forest": {
+        "exactitud": 0.6138,
+        "precision_cara": 0.9973,
+        "recall_cara": 0.6069,
+        "f1_cara": 0.7546,
+        "auc": 0.8267,
+        "matriz_confusion": [
+          [
+            122,
+            10
+          ],
+          [
+            2365,
+            3652
+          ]
+        ]
+      }
+    }
+  }
+}
