@@ -81,6 +81,8 @@ Resultados actuales:
 - Validacion 2025: el MAE del Random Forest fue 236,11 frente a 330,97 del baseline.
 - Evaluacion 2026: el MAE fue 712 frente a 844,82 del baseline.
 - El RMSE de 2026 fue 763,94.
+- El R2 de regresion fue -0,7165. Este valor negativo significa que la
+  regresion funciono peor que una prediccion simple basada en el promedio.
 - La exactitud de clasificacion fue 61,38 %.
 - El F1 de la clase Cara fue 75,46 %.
 - El AUC fue 82,67 %.

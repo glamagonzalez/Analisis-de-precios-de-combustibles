@@ -31,3 +31,4 @@ python .\generar_datasets_modelos.py
 - La evaluacion incluye baseline de mediana para regresion y baseline de clase mas frecuente para clasificacion.
 - La clasificacion de 2026 usa como referencia la mediana de 2025 para evitar utilizar informacion futura.
 - El dashboard interactivo se ejecuta con `streamlit run dashboard_ypf.py`.
+- Para validar el proyecto, ejecutar `python -m pytest -q`.

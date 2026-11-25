@@ -48,8 +48,16 @@ Las metricas y predicciones se generan de forma temporal para evitar mezclar dat
 - Exactitud de clasificacion en 2026: 61,38 %.
 - F1 de la clase Cara: 75,46 %.
 - AUC: 82,67 %.
+- R2 de la regresion en 2026: -0,7165. Un R2 negativo indica que el modelo de
+  regresion no supera una prediccion simple basada en el promedio.
 
 Estos resultados deben interpretarse junto con las limitaciones de cobertura de 2026.
+
+## Pruebas
+
+```powershell
+python -m pytest -q
+```
 
 ## Dashboard
 

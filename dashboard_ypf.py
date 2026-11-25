@@ -32,7 +32,14 @@ evaluacion_2026["tipo_periodo"] = "Real disponible 2026"
 pronostico_2027["tipo_periodo"] = "Pronostico 2027"
 
 historico["precio_predicho"] = pd.NA
-evaluacion_2026["precio_predicho"] = predicciones_2026["precio_predicho"].values
+evaluacion_2026 = evaluacion_2026.merge(
+    predicciones_2026[
+        ["precio_predicho", "clase_predicha", "probabilidad_cara"]
+    ].rename_axis("__fila").reset_index(),
+    left_index=True,
+    right_on="__fila",
+    how="left",
+)
 
 st.title("Analisis de precios de combustibles")
 st.caption(
@@ -212,6 +219,7 @@ with tab_modelos:
             "Baseline MAE",
             f"${metricas['regresion']['baseline_mediana']['mae']:,.2f}",
         )
+        r2 = metricas["regresion"]["random_forest"]["r2"]
         col3.metric(
             "Accuracy clasificacion",
             f"{metricas['clasificacion']['random_forest']['exactitud']:.2%}",
@@ -220,6 +228,13 @@ with tab_modelos:
             "AUC clasificacion",
             f"{metricas['clasificacion']['random_forest']['auc']:.2%}",
         )
+        if r2 < 0:
+            st.error(
+                "R2 negativo "
+                f"({r2:.4f}): en 2026 la regresion es peor que estimar "
+                "simplemente el precio medio. El resultado no indica capacidad "
+                "de prediccion confiable para 2027."
+            )
 
         validacion = resumen["validacion_temporal_2025"]
         st.markdown("### Validacion temporal 2025")

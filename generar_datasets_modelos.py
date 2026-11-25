@@ -33,6 +33,17 @@ NUMERICAS = ["anio", "mes"]
 
 def cargar_limpiar() -> pd.DataFrame:
     df = pd.read_csv(ENTRADA, sep=";", low_memory=False, encoding="utf-8")
+    requeridas = {
+        "precio", "indice_tiempo", "empresabandera", "producto",
+        "tipohorario", "provincia", "region", "idempresa",
+        "idproducto", "idtipohorario", "direccion",
+    }
+    faltantes = sorted(requeridas.difference(df.columns))
+    if faltantes:
+        raise ValueError(
+            "Faltan columnas obligatorias en el archivo fuente: "
+            + ", ".join(faltantes)
+        )
     df["precio"] = pd.to_numeric(df["precio"], errors="coerce")
     df["fecha"] = pd.to_datetime(df["indice_tiempo"], format="%Y-%m", errors="coerce")
 
@@ -296,6 +307,10 @@ def main():
     df = cargar_limpiar()
     historico = df[df["anio"].isin([2024, 2025])].copy()
     evaluacion = df[df["anio"] == 2026].copy()
+    if historico.empty:
+        raise ValueError("No hay datos 2024-2025 para entrenar los modelos.")
+    if evaluacion.empty:
+        raise ValueError("No hay datos disponibles de 2026 para evaluar los modelos.")
 
     columnas_base = CATEGORICAS + NUMERICAS + [
         "precio", "indice_tiempo", "idempresa", "direccion", "localidad",
