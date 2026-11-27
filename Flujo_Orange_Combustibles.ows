@@ -1,0 +1,121 @@
+<?xml version='1.0' encoding='utf-8'?>
+<scheme version="2.0" title="Analisis de precios de combustibles" description="Regresion y clasificacion con Random Forest - evaluacion con 2026">
+	<nodes>
+		<node id="0" name="File" qualified_name="Orange.widgets.data.owfile.OWFile" project_name="Orange3" version="" title="Dataset limpio completo" position="(0.0, 0.0)" />
+		<node id="1" name="Data Table" qualified_name="Orange.widgets.data.owtable.OWTable" project_name="Orange3" version="" title="Tabla de datos" position="(200.0, -120.0)" />
+		<node id="2" name="Distributions" qualified_name="Orange.widgets.visualize.owdistributions.OWDistributions" project_name="Orange3" version="" title="Distribucion de precios" position="(200.0, -40.0)" />
+		<node id="3" name="Box Plot" qualified_name="Orange.widgets.visualize.owboxplot.OWBoxPlot" project_name="Orange3" version="" title="Box Plot por bandera" position="(200.0, 40.0)" />
+		<node id="4" name="Violin Plot" qualified_name="Orange.widgets.visualize.owviolinplot.OWViolinPlot" project_name="Orange3" version="" title="Violin por producto" position="(200.0, 120.0)" />
+		<node id="5" name="Scatter Plot" qualified_name="Orange.widgets.visualize.owscatterplot.OWScatterPlot" project_name="Orange3" version="" title="Precio vs precio relativo" position="(200.0, 200.0)" />
+		<node id="6" name="File" qualified_name="Orange.widgets.data.owfile.OWFile" project_name="Orange3" version="" title="Clasificacion - entrenamiento 2024-2025" position="(0.0, 380.0)" />
+		<node id="7" name="File" qualified_name="Orange.widgets.data.owfile.OWFile" project_name="Orange3" version="" title="Clasificacion - evaluacion 2026" position="(0.0, 520.0)" />
+		<node id="8" name="Random Forest" qualified_name="Orange.widgets.model.owrandomforest.OWRandomForest" project_name="Orange3" version="" title="RF clasificacion" position="(220.0, 340.0)" />
+		<node id="9" name="Constant" qualified_name="Orange.widgets.model.owconstant.OWConstant" project_name="Orange3" version="" title="Baseline clase frecuente" position="(220.0, 440.0)" />
+		<node id="10" name="Logistic Regression" qualified_name="Orange.widgets.model.owlogisticregression.OWLogisticRegression" project_name="Orange3" version="" title="Regresion logistica" position="(220.0, 540.0)" />
+		<node id="11" name="Test and Score" qualified_name="Orange.widgets.evaluate.owtestandscore.OWTestAndScore" project_name="Orange3" version="" title="Test and Score - clasificacion" position="(440.0, 440.0)" />
+		<node id="12" name="Confusion Matrix" qualified_name="Orange.widgets.evaluate.owconfusionmatrix.OWConfusionMatrix" project_name="Orange3" version="" title="Matriz de confusion" position="(660.0, 400.0)" />
+		<node id="13" name="ROC Analysis" qualified_name="Orange.widgets.evaluate.owrocanalysis.OWROCAnalysis" project_name="Orange3" version="" title="Curva ROC" position="(660.0, 500.0)" />
+		<node id="14" name="Predictions" qualified_name="Orange.widgets.evaluate.owpredictions.OWPredictions" project_name="Orange3" version="" title="Predicciones 2026 - clase" position="(440.0, 600.0)" />
+		<node id="15" name="File" qualified_name="Orange.widgets.data.owfile.OWFile" project_name="Orange3" version="" title="Regresion - entrenamiento 2024-2025" position="(0.0, 780.0)" />
+		<node id="16" name="File" qualified_name="Orange.widgets.data.owfile.OWFile" project_name="Orange3" version="" title="Regresion - evaluacion 2026" position="(0.0, 920.0)" />
+		<node id="17" name="Random Forest" qualified_name="Orange.widgets.model.owrandomforest.OWRandomForest" project_name="Orange3" version="" title="RF regresion" position="(220.0, 740.0)" />
+		<node id="18" name="Constant" qualified_name="Orange.widgets.model.owconstant.OWConstant" project_name="Orange3" version="" title="Baseline media" position="(220.0, 840.0)" />
+		<node id="19" name="Linear Regression" qualified_name="Orange.widgets.model.owlinearregression.OWLinearRegression" project_name="Orange3" version="" title="Regresion lineal" position="(220.0, 940.0)" />
+		<node id="20" name="Test and Score" qualified_name="Orange.widgets.evaluate.owtestandscore.OWTestAndScore" project_name="Orange3" version="" title="Test and Score - regresion" position="(440.0, 840.0)" />
+		<node id="21" name="Predictions" qualified_name="Orange.widgets.evaluate.owpredictions.OWPredictions" project_name="Orange3" version="" title="Predicciones 2026 - precio relativo" position="(440.0, 1000.0)" />
+		<node id="22" name="Scatter Plot" qualified_name="Orange.widgets.visualize.owscatterplot.OWScatterPlot" project_name="Orange3" version="" title="Real vs predicho" position="(660.0, 1000.0)" />
+	</nodes>
+	<links>
+		<link id="0" source_node_id="0" sink_node_id="1" source_channel="Data" sink_channel="Data" enabled="true" source_channel_id="data" sink_channel_id="data" />
+		<link id="1" source_node_id="0" sink_node_id="2" source_channel="Data" sink_channel="Data" enabled="true" source_channel_id="data" sink_channel_id="data" />
+		<link id="2" source_node_id="0" sink_node_id="3" source_channel="Data" sink_channel="Data" enabled="true" source_channel_id="data" sink_channel_id="data" />
+		<link id="3" source_node_id="0" sink_node_id="4" source_channel="Data" sink_channel="Data" enabled="true" source_channel_id="data" sink_channel_id="data" />
+		<link id="4" source_node_id="0" sink_node_id="5" source_channel="Data" sink_channel="Data" enabled="true" source_channel_id="data" sink_channel_id="data" />
+		<link id="5" source_node_id="6" sink_node_id="8" source_channel="Data" sink_channel="Data" enabled="true" source_channel_id="data" sink_channel_id="data" />
+		<link id="6" source_node_id="6" sink_node_id="9" source_channel="Data" sink_channel="Data" enabled="true" source_channel_id="data" sink_channel_id="data" />
+		<link id="7" source_node_id="6" sink_node_id="10" source_channel="Data" sink_channel="Data" enabled="true" source_channel_id="data" sink_channel_id="data" />
+		<link id="8" source_node_id="6" sink_node_id="11" source_channel="Data" sink_channel="Data" enabled="true" source_channel_id="data" sink_channel_id="train_data" />
+		<link id="9" source_node_id="7" sink_node_id="11" source_channel="Data" sink_channel="Test Data" enabled="true" source_channel_id="data" sink_channel_id="test_data" />
+		<link id="10" source_node_id="8" sink_node_id="11" source_channel="Learner" sink_channel="Learner" enabled="true" source_channel_id="learner" sink_channel_id="learner" />
+		<link id="11" source_node_id="9" sink_node_id="11" source_channel="Learner" sink_channel="Learner" enabled="true" source_channel_id="learner" sink_channel_id="learner" />
+		<link id="12" source_node_id="10" sink_node_id="11" source_channel="Learner" sink_channel="Learner" enabled="true" source_channel_id="learner" sink_channel_id="learner" />
+		<link id="13" source_node_id="11" sink_node_id="12" source_channel="Evaluation Results" sink_channel="Evaluation Results" enabled="true" source_channel_id="evaluations_results" sink_channel_id="evaluation_results" />
+		<link id="14" source_node_id="11" sink_node_id="13" source_channel="Evaluation Results" sink_channel="Evaluation Results" enabled="true" source_channel_id="evaluations_results" sink_channel_id="evaluation_results" />
+		<link id="15" source_node_id="7" sink_node_id="14" source_channel="Data" sink_channel="Data" enabled="true" source_channel_id="data" sink_channel_id="data" />
+		<link id="16" source_node_id="8" sink_node_id="14" source_channel="Model" sink_channel="Predictors" enabled="true" source_channel_id="model" sink_channel_id="predictors" />
+		<link id="17" source_node_id="15" sink_node_id="17" source_channel="Data" sink_channel="Data" enabled="true" source_channel_id="data" sink_channel_id="data" />
+		<link id="18" source_node_id="15" sink_node_id="18" source_channel="Data" sink_channel="Data" enabled="true" source_channel_id="data" sink_channel_id="data" />
+		<link id="19" source_node_id="15" sink_node_id="19" source_channel="Data" sink_channel="Data" enabled="true" source_channel_id="data" sink_channel_id="data" />
+		<link id="20" source_node_id="15" sink_node_id="20" source_channel="Data" sink_channel="Data" enabled="true" source_channel_id="data" sink_channel_id="train_data" />
+		<link id="21" source_node_id="16" sink_node_id="20" source_channel="Data" sink_channel="Test Data" enabled="true" source_channel_id="data" sink_channel_id="test_data" />
+		<link id="22" source_node_id="17" sink_node_id="20" source_channel="Learner" sink_channel="Learner" enabled="true" source_channel_id="learner" sink_channel_id="learner" />
+		<link id="23" source_node_id="18" sink_node_id="20" source_channel="Learner" sink_channel="Learner" enabled="true" source_channel_id="learner" sink_channel_id="learner" />
+		<link id="24" source_node_id="19" sink_node_id="20" source_channel="Learner" sink_channel="Learner" enabled="true" source_channel_id="learner" sink_channel_id="learner" />
+		<link id="25" source_node_id="16" sink_node_id="21" source_channel="Data" sink_channel="Data" enabled="true" source_channel_id="data" sink_channel_id="data" />
+		<link id="26" source_node_id="17" sink_node_id="21" source_channel="Model" sink_channel="Predictors" enabled="true" source_channel_id="model" sink_channel_id="predictors" />
+		<link id="27" source_node_id="21" sink_node_id="22" source_channel="Predictions" sink_channel="Data" enabled="true" source_channel_id="annotated" sink_channel_id="data" />
+	</links>
+	<annotations>
+		<text id="0" type="text/plain" rect="(0.0, -170.0, 520.0, 30.0)" font-family="Helvetica" font-size="16">1. Exploracion del dataset limpio</text>
+		<text id="1" type="text/plain" rect="(0.0, 300.0, 520.0, 30.0)" font-family="Helvetica" font-size="16">2. Clasificacion: Cara / Barata (RF vs baseline vs logistica)</text>
+		<text id="2" type="text/plain" rect="(0.0, 700.0, 520.0, 30.0)" font-family="Helvetica" font-size="16">3. Regresion: precio relativo al mercado (RF vs media vs lineal)</text>
+	</annotations>
+	<thumbnail />
+	<node_properties>
+		<properties node_id="0" format="pickle">gASVQgEAAAAAAAB9lCiMDHJlY2VudF9wYXRoc5RdlIweb3Jhbmdld2lkZ2V0LnV0aWxzLmZpbGVk
+aWFsb2dzlIwKUmVjZW50UGF0aJSTlCmBlH2UKIwHYWJzcGF0aJSMOC9ob21lL2NsYXVkZS9wcm95
+ZWN0by9vcmFuZ2UvZGF0YXNldF9saW1waW9fY29tcGxldG8uY3N2lIwGcHJlZml4lIwHYmFzZWRp
+cpSMB3JlbHBhdGiUjCJvcmFuZ2UvZGF0YXNldF9saW1waW9fY29tcGxldG8uY3N2lIwFdGl0bGWU
+jACUjAVzaGVldJRoD4wLZmlsZV9mb3JtYXSUTnViYYwLcmVjZW50X3VybHOUXZSMBnNvdXJjZZRL
+AIwDdXJslGgPjAtfX3ZlcnNpb25fX5RLAowQY29udGV4dF9zZXR0aW5nc5RdlHUu
+</properties>
+		<properties node_id="6" format="pickle">gASVSgEAAAAAAAB9lCiMDHJlY2VudF9wYXRoc5RdlIweb3Jhbmdld2lkZ2V0LnV0aWxzLmZpbGVk
+aWFsb2dzlIwKUmVjZW50UGF0aJSTlCmBlH2UKIwHYWJzcGF0aJSMPC9ob21lL2NsYXVkZS9wcm95
+ZWN0by9vcmFuZ2UvY2xhc2lmaWNhY2lvbl9lbnRyZW5hbWllbnRvLmNzdpSMBnByZWZpeJSMB2Jh
+c2VkaXKUjAdyZWxwYXRolIwmb3JhbmdlL2NsYXNpZmljYWNpb25fZW50cmVuYW1pZW50by5jc3aU
+jAV0aXRsZZSMAJSMBXNoZWV0lGgPjAtmaWxlX2Zvcm1hdJROdWJhjAtyZWNlbnRfdXJsc5RdlIwG
+c291cmNllEsAjAN1cmyUaA+MC19fdmVyc2lvbl9flEsCjBBjb250ZXh0X3NldHRpbmdzlF2UdS4=
+</properties>
+		<properties node_id="7" format="pickle">gASVTgEAAAAAAAB9lCiMDHJlY2VudF9wYXRoc5RdlIweb3Jhbmdld2lkZ2V0LnV0aWxzLmZpbGVk
+aWFsb2dzlIwKUmVjZW50UGF0aJSTlCmBlH2UKIwHYWJzcGF0aJSMPi9ob21lL2NsYXVkZS9wcm95
+ZWN0by9vcmFuZ2UvY2xhc2lmaWNhY2lvbl9ldmFsdWFjaW9uXzIwMjYuY3N2lIwGcHJlZml4lIwH
+YmFzZWRpcpSMB3JlbHBhdGiUjChvcmFuZ2UvY2xhc2lmaWNhY2lvbl9ldmFsdWFjaW9uXzIwMjYu
+Y3N2lIwFdGl0bGWUjACUjAVzaGVldJRoD4wLZmlsZV9mb3JtYXSUTnViYYwLcmVjZW50X3VybHOU
+XZSMBnNvdXJjZZRLAIwDdXJslGgPjAtfX3ZlcnNpb25fX5RLAowQY29udGV4dF9zZXR0aW5nc5Rd
+lHUu
+</properties>
+		<properties node_id="8" format="pickle">gASVpgAAAAAAAAB9lCiMDG5fZXN0aW1hdG9yc5RLyIwVdXNlX21pbl9zYW1wbGVzX3NwbGl0lIiM
+EW1pbl9zYW1wbGVzX3NwbGl0lEs8jBB1c2VfcmFuZG9tX3N0YXRllIiMDGNsYXNzX3dlaWdodJSI
+jAxsZWFybmVyX25hbWWUjA1SYW5kb20gRm9yZXN0lIwKYXV0b19hcHBseZSIjAtfX3ZlcnNpb25f
+X5RLAXUu
+</properties>
+		<properties node_id="11" format="pickle">gASVOQAAAAAAAAB9lCiMCnJlc2FtcGxpbmeUSwWMC19fdmVyc2lvbl9flEsEjBBjb250ZXh0X3Nl
+dHRpbmdzlF2UdS4=
+</properties>
+		<properties node_id="15" format="pickle">gASVQgEAAAAAAAB9lCiMDHJlY2VudF9wYXRoc5RdlIweb3Jhbmdld2lkZ2V0LnV0aWxzLmZpbGVk
+aWFsb2dzlIwKUmVjZW50UGF0aJSTlCmBlH2UKIwHYWJzcGF0aJSMOC9ob21lL2NsYXVkZS9wcm95
+ZWN0by9vcmFuZ2UvcmVncmVzaW9uX2VudHJlbmFtaWVudG8uY3N2lIwGcHJlZml4lIwHYmFzZWRp
+cpSMB3JlbHBhdGiUjCJvcmFuZ2UvcmVncmVzaW9uX2VudHJlbmFtaWVudG8uY3N2lIwFdGl0bGWU
+jACUjAVzaGVldJRoD4wLZmlsZV9mb3JtYXSUTnViYYwLcmVjZW50X3VybHOUXZSMBnNvdXJjZZRL
+AIwDdXJslGgPjAtfX3ZlcnNpb25fX5RLAowQY29udGV4dF9zZXR0aW5nc5RdlHUu
+</properties>
+		<properties node_id="16" format="pickle">gASVRgEAAAAAAAB9lCiMDHJlY2VudF9wYXRoc5RdlIweb3Jhbmdld2lkZ2V0LnV0aWxzLmZpbGVk
+aWFsb2dzlIwKUmVjZW50UGF0aJSTlCmBlH2UKIwHYWJzcGF0aJSMOi9ob21lL2NsYXVkZS9wcm95
+ZWN0by9vcmFuZ2UvcmVncmVzaW9uX2V2YWx1YWNpb25fMjAyNi5jc3aUjAZwcmVmaXiUjAdiYXNl
+ZGlylIwHcmVscGF0aJSMJG9yYW5nZS9yZWdyZXNpb25fZXZhbHVhY2lvbl8yMDI2LmNzdpSMBXRp
+dGxllIwAlIwFc2hlZXSUaA+MC2ZpbGVfZm9ybWF0lE51YmGMC3JlY2VudF91cmxzlF2UjAZzb3Vy
+Y2WUSwCMA3VybJRoD4wLX192ZXJzaW9uX1+USwKMEGNvbnRleHRfc2V0dGluZ3OUXZR1Lg==
+</properties>
+		<properties node_id="17" format="pickle">gASVpgAAAAAAAAB9lCiMDG5fZXN0aW1hdG9yc5RLyIwVdXNlX21pbl9zYW1wbGVzX3NwbGl0lIiM
+EW1pbl9zYW1wbGVzX3NwbGl0lEs8jBB1c2VfcmFuZG9tX3N0YXRllIiMDGNsYXNzX3dlaWdodJSJ
+jAxsZWFybmVyX25hbWWUjA1SYW5kb20gRm9yZXN0lIwKYXV0b19hcHBseZSIjAtfX3ZlcnNpb25f
+X5RLAXUu
+</properties>
+		<properties node_id="20" format="pickle">gASVOQAAAAAAAAB9lCiMCnJlc2FtcGxpbmeUSwWMC19fdmVyc2lvbl9flEsEjBBjb250ZXh0X3Nl
+dHRpbmdzlF2UdS4=
+</properties>
+	</node_properties>
+	<session_state>
+		<window_groups />
+	</session_state>
+</scheme>

@@ -1,0 +1,13 @@
+﻿region,grupo_bandera,registros,pct_cara_real,pct_cara_predicha,prob_cara_media,precio_relativo_medio
+CENTRO,Resto del mercado,2528,67.5,81.0,0.709,1.0215
+CENTRO,YPF,130,30.8,72.3,0.551,0.9882
+CUYO,Resto del mercado,454,59.0,44.5,0.502,1.013
+CUYO,YPF,26,46.2,7.7,0.192,1.0041
+NEA,Resto del mercado,468,65.2,98.3,0.861,1.0207
+NEA,YPF,16,0.0,75.0,0.722,0.9707
+NOA,Resto del mercado,386,86.0,89.9,0.732,1.0422
+NOA,YPF,18,100.0,100.0,0.814,1.2674
+PAMPEANA,Resto del mercado,4599,36.6,63.9,0.537,0.9863
+PAMPEANA,YPF,274,30.7,0.0,0.268,0.9622
+PATAGONIA,Resto del mercado,544,25.4,45.2,0.401,0.957
+PATAGONIA,YPF,72,8.3,30.6,0.313,0.9253

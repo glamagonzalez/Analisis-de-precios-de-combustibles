@@ -1,0 +1,295 @@
+{
+  "periodo_entrenamiento": "2024-2025",
+  "periodo_evaluacion_real": "2026 (enero-septiembre, cobertura parcial)",
+  "periodo_pronostico": "2027",
+  "filas_entrenamiento": 24563,
+  "filas_evaluacion_2026": 9515,
+  "filas_validacion_sep_dic_2025": 2891,
+  "estaciones_unicas_entrenamiento": 3142,
+  "estaciones_unicas_evaluacion_2026": 1350,
+  "definicion_clase": "Cara si el precio supera la mediana de su producto en el mismo mes",
+  "aumento_anual_supuesto_en_proyeccion_pct": {
+    "GNC": 30.9,
+    "Gas Oil Grado 2": 58.4,
+    "Gas Oil Grado 3": 53.6,
+    "Nafta (premium) de más de 95 Ron": 40.2,
+    "Nafta (súper) entre 92 y 95 Ron": 49.4
+  },
+  "tiempos_segundos": {
+    "limpieza": 0.4,
+    "modelado": 14.7,
+    "total": 16.8
+  },
+  "ypf_vs_resto": [
+    {
+      "nivel": "Total",
+      "grupo": "Mes x producto x region",
+      "celdas": 172,
+      "registros_ypf": 12564,
+      "dif_pct": -6.19,
+      "ic95_inf": -6.86,
+      "ic95_sup": -5.32,
+      "pct_celdas_ypf_mas_barata": 79.1
+    },
+    {
+      "nivel": "Total",
+      "grupo": "Sin junio 2025 (volcado masivo)",
+      "celdas": 146,
+      "registros_ypf": 2434,
+      "dif_pct": -3.31,
+      "ic95_inf": -4.04,
+      "ic95_sup": -2.41,
+      "pct_celdas_ypf_mas_barata": 76.0
+    },
+    {
+      "nivel": "Total",
+      "grupo": "Mes x producto x localidad",
+      "celdas": 214,
+      "registros_ypf": 2944,
+      "dif_pct": -6.12,
+      "ic95_inf": -7.09,
+      "ic95_sup": -5.17,
+      "pct_celdas_ypf_mas_barata": 86.0
+    },
+    {
+      "nivel": "Region",
+      "grupo": "CENTRO",
+      "celdas": 44,
+      "registros_ypf": 2794,
+      "dif_pct": -6.19,
+      "ic95_inf": -7.01,
+      "ic95_sup": -4.87,
+      "pct_celdas_ypf_mas_barata": 77.3
+    },
+    {
+      "nivel": "Region",
+      "grupo": "CUYO",
+      "celdas": 24,
+      "registros_ypf": 1418,
+      "dif_pct": -5.84,
+      "ic95_inf": -7.04,
+      "ic95_sup": -3.23,
+      "pct_celdas_ypf_mas_barata": 75.0
+    },
+    {
+      "nivel": "Region",
+      "grupo": "NEA",
+      "celdas": 8,
+      "registros_ypf": 910,
+      "dif_pct": -8.64,
+      "ic95_inf": -9.95,
+      "ic95_sup": -6.61,
+      "pct_celdas_ypf_mas_barata": 100.0
+    },
+    {
+      "nivel": "Region",
+      "grupo": "NOA",
+      "celdas": 14,
+      "registros_ypf": 950,
+      "dif_pct": -3.14,
+      "ic95_inf": -4.59,
+      "ic95_sup": -1.38,
+      "pct_celdas_ypf_mas_barata": 85.7
+    },
+    {
+      "nivel": "Region",
+      "grupo": "PAMPEANA",
+      "celdas": 58,
+      "registros_ypf": 4960,
+      "dif_pct": -6.78,
+      "ic95_inf": -7.82,
+      "ic95_sup": -4.48,
+      "pct_celdas_ypf_mas_barata": 70.7
+    },
+    {
+      "nivel": "Region",
+      "grupo": "PATAGONIA",
+      "celdas": 24,
+      "registros_ypf": 1532,
+      "dif_pct": -5.08,
+      "ic95_inf": -5.87,
+      "ic95_sup": -4.01,
+      "pct_celdas_ypf_mas_barata": 95.8
+    },
+    {
+      "nivel": "Producto",
+      "grupo": "GNC",
+      "celdas": 61,
+      "registros_ypf": 666,
+      "dif_pct": -1.07,
+      "ic95_inf": -3.28,
+      "ic95_sup": 1.0,
+      "pct_celdas_ypf_mas_barata": 54.1
+    },
+    {
+      "nivel": "Producto",
+      "grupo": "Gas Oil Grado 2",
+      "celdas": 26,
+      "registros_ypf": 2956,
+      "dif_pct": -6.9,
+      "ic95_inf": -8.4,
+      "ic95_sup": -4.33,
+      "pct_celdas_ypf_mas_barata": 92.3
+    },
+    {
+      "nivel": "Producto",
+      "grupo": "Gas Oil Grado 3",
+      "celdas": 29,
+      "registros_ypf": 2982,
+      "dif_pct": -7.58,
+      "ic95_inf": -8.3,
+      "ic95_sup": -6.06,
+      "pct_celdas_ypf_mas_barata": 93.1
+    },
+    {
+      "nivel": "Producto",
+      "grupo": "Nafta (premium) de más de 95 Ron",
+      "celdas": 28,
+      "registros_ypf": 2974,
+      "dif_pct": -6.55,
+      "ic95_inf": -7.18,
+      "ic95_sup": -5.55,
+      "pct_celdas_ypf_mas_barata": 100.0
+    },
+    {
+      "nivel": "Producto",
+      "grupo": "Nafta (súper) entre 92 y 95 Ron",
+      "celdas": 28,
+      "registros_ypf": 2986,
+      "dif_pct": -4.9,
+      "ic95_inf": -5.58,
+      "ic95_sup": -3.17,
+      "pct_celdas_ypf_mas_barata": 85.7
+    },
+    {
+      "nivel": "Anio",
+      "grupo": "2024",
+      "celdas": 13,
+      "registros_ypf": 102,
+      "dif_pct": 1.59,
+      "ic95_inf": -2.71,
+      "ic95_sup": 6.02,
+      "pct_celdas_ypf_mas_barata": 46.2
+    },
+    {
+      "nivel": "Anio",
+      "grupo": "2025",
+      "celdas": 117,
+      "registros_ypf": 12006,
+      "dif_pct": -6.45,
+      "ic95_inf": -7.11,
+      "ic95_sup": -5.6,
+      "pct_celdas_ypf_mas_barata": 85.5
+    },
+    {
+      "nivel": "Anio",
+      "grupo": "2026",
+      "celdas": 42,
+      "registros_ypf": 456,
+      "dif_pct": -1.29,
+      "ic95_inf": -3.45,
+      "ic95_sup": 0.94,
+      "pct_celdas_ypf_mas_barata": 71.4
+    }
+  ],
+  "validacion_sep_dic_2025": {
+    "regresion": {
+      "baseline_mediana_global": {
+        "mae": 386.15,
+        "rmse": 429.69,
+        "r2": -0.6317
+      },
+      "baseline_ultimo_mes_producto": {
+        "mae": 171.22,
+        "rmse": 201.22,
+        "r2": 0.6422
+      },
+      "rf_precio_pronosticado": {
+        "mae": 153.38,
+        "rmse": 179.51,
+        "r2": 0.7152
+      },
+      "rf_con_indice_de_mercado_conocido": {
+        "mae": 68.41,
+        "rmse": 90.67,
+        "r2": 0.9273
+      },
+      "rf_precio_relativo": {
+        "mae": 0.046,
+        "baseline_mae": 0.0478
+      }
+    },
+    "clasificacion": {
+      "baseline_clase_frecuente": {
+        "exactitud": 0.5178
+      },
+      "random_forest": {
+        "exactitud": 0.6299,
+        "precision_cara": 0.5754,
+        "recall_cara": 0.8867,
+        "f1_cara": 0.6979,
+        "auc": 0.7417,
+        "matriz_confusion": [
+          [
+            585,
+            912
+          ],
+          [
+            158,
+            1236
+          ]
+        ]
+      }
+    }
+  },
+  "evaluacion_2026": {
+    "regresion": {
+      "baseline_mediana_global": {
+        "mae": 850.28,
+        "rmse": 885.27,
+        "r2": -1.5159
+      },
+      "baseline_ultimo_mes_producto": {
+        "mae": 402.86,
+        "rmse": 446.99,
+        "r2": 0.3586
+      },
+      "rf_precio_pronosticado": {
+        "mae": 171.69,
+        "rmse": 216.85,
+        "r2": 0.849
+      },
+      "rf_con_indice_de_mercado_conocido": {
+        "mae": 79.61,
+        "rmse": 110.53,
+        "r2": 0.9608
+      },
+      "rf_precio_relativo": {
+        "mae": 0.0453,
+        "baseline_mae": 0.046
+      }
+    },
+    "clasificacion": {
+      "baseline_clase_frecuente": {
+        "exactitud": 0.5173
+      },
+      "random_forest": {
+        "exactitud": 0.6283,
+        "precision_cara": 0.5826,
+        "recall_cara": 0.8106,
+        "f1_cara": 0.678,
+        "auc": 0.7236,
+        "matriz_confusion": [
+          [
+            2255,
+            2667
+          ],
+          [
+            870,
+            3723
+          ]
+        ]
+      }
+    }
+  }
+}

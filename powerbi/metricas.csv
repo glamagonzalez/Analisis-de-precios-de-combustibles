@@ -1,0 +1,41 @@
+﻿ensayo,tarea,modelo,metrica,valor
+Validacion sep-dic 2025,Regresion,baseline_mediana_global,mae,386.15
+Validacion sep-dic 2025,Regresion,baseline_mediana_global,rmse,429.69
+Validacion sep-dic 2025,Regresion,baseline_mediana_global,r2,-0.6317
+Validacion sep-dic 2025,Regresion,baseline_ultimo_mes_producto,mae,171.22
+Validacion sep-dic 2025,Regresion,baseline_ultimo_mes_producto,rmse,201.22
+Validacion sep-dic 2025,Regresion,baseline_ultimo_mes_producto,r2,0.6422
+Validacion sep-dic 2025,Regresion,rf_precio_pronosticado,mae,153.38
+Validacion sep-dic 2025,Regresion,rf_precio_pronosticado,rmse,179.51
+Validacion sep-dic 2025,Regresion,rf_precio_pronosticado,r2,0.7152
+Validacion sep-dic 2025,Regresion,rf_con_indice_de_mercado_conocido,mae,68.41
+Validacion sep-dic 2025,Regresion,rf_con_indice_de_mercado_conocido,rmse,90.67
+Validacion sep-dic 2025,Regresion,rf_con_indice_de_mercado_conocido,r2,0.9273
+Validacion sep-dic 2025,Regresion,rf_precio_relativo,mae,0.046
+Validacion sep-dic 2025,Regresion,rf_precio_relativo,baseline_mae,0.0478
+Validacion sep-dic 2025,Clasificacion,baseline_clase_frecuente,exactitud,0.5178
+Validacion sep-dic 2025,Clasificacion,random_forest,exactitud,0.6299
+Validacion sep-dic 2025,Clasificacion,random_forest,precision_cara,0.5754
+Validacion sep-dic 2025,Clasificacion,random_forest,recall_cara,0.8867
+Validacion sep-dic 2025,Clasificacion,random_forest,f1_cara,0.6979
+Validacion sep-dic 2025,Clasificacion,random_forest,auc,0.7417
+Evaluacion 2026,Regresion,baseline_mediana_global,mae,850.28
+Evaluacion 2026,Regresion,baseline_mediana_global,rmse,885.27
+Evaluacion 2026,Regresion,baseline_mediana_global,r2,-1.5159
+Evaluacion 2026,Regresion,baseline_ultimo_mes_producto,mae,402.86
+Evaluacion 2026,Regresion,baseline_ultimo_mes_producto,rmse,446.99
+Evaluacion 2026,Regresion,baseline_ultimo_mes_producto,r2,0.3586
+Evaluacion 2026,Regresion,rf_precio_pronosticado,mae,171.69
+Evaluacion 2026,Regresion,rf_precio_pronosticado,rmse,216.85
+Evaluacion 2026,Regresion,rf_precio_pronosticado,r2,0.849
+Evaluacion 2026,Regresion,rf_con_indice_de_mercado_conocido,mae,79.61
+Evaluacion 2026,Regresion,rf_con_indice_de_mercado_conocido,rmse,110.53
+Evaluacion 2026,Regresion,rf_con_indice_de_mercado_conocido,r2,0.9608
+Evaluacion 2026,Regresion,rf_precio_relativo,mae,0.0453
+Evaluacion 2026,Regresion,rf_precio_relativo,baseline_mae,0.046
+Evaluacion 2026,Clasificacion,baseline_clase_frecuente,exactitud,0.5173
+Evaluacion 2026,Clasificacion,random_forest,exactitud,0.6283
+Evaluacion 2026,Clasificacion,random_forest,precision_cara,0.5826
+Evaluacion 2026,Clasificacion,random_forest,recall_cara,0.8106
+Evaluacion 2026,Clasificacion,random_forest,f1_cara,0.678
+Evaluacion 2026,Clasificacion,random_forest,auc,0.7236

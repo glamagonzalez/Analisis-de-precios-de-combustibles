@@ -1,0 +1,10 @@
+﻿paso,filas_restantes,filas_eliminadas,surtidores_restantes,decision
+0. Archivo original,36669,0,4612,Lectura con separador ';' y codificacion utf-8-sig.
+0b. Recuperar precios mal formateados,36669,0,4612,398 filas con formato 'x.xxx.000' se corrigen (valor/10.000); 8 quedan nulas.
+1. Imputar region desde provincia,36669,0,4612,7955 filas recuperadas (no se descartan por region vacia).
+2. Quitar nulos en variables esenciales,36661,8,4611,"Precio, fecha, bandera, producto, horario, provincia, region e id."
+3. Periodo de estudio: 2024 en adelante,34135,2526,4262,Se descartan 2016-2023: pocos registros y precios en pesos de otra epoca.
+3b. Control de rango de precio 50-10.000,34135,0,4262,Control de errores de carga.
+4. Banderas sin identificacion confiable,34127,8,4261,SIN EMPRESA BANDERA y WICO (muy pocos registros).
+5. Duplicados por estacion-producto-horario-mes,34095,32,4261,Se conserva el precio con vigencia mas reciente.
+"6. Atipicos relativos (0,4x a 2,5x la mediana)",34078,17,4261,Precio muy alejado de la mediana de su producto y mes.

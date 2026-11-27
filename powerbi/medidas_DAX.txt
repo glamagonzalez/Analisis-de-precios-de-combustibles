@@ -1,0 +1,75 @@
+-- ============ TABLAS CALCULADAS (Modelado > Nueva tabla) ============
+dim_fecha =
+ADDCOLUMNS(
+    CALENDAR(DATE(2024,1,1), DATE(2027,12,31)),
+    "Anio", YEAR([Date]), "Mes", MONTH([Date]),
+    "Etiqueta", FORMAT([Date], "yyyy-mm"),
+    "Tipo", IF([Date] > DATE(2026,9,30), "Proyeccion", IF([Date] >= DATE(2026,1,1), "2026 parcial", "Historico"))
+)
+
+dim_producto = DISTINCT(SELECTCOLUMNS(fact_precios, "producto", fact_precios[producto]))
+dim_bandera  = DISTINCT(SELECTCOLUMNS(fact_precios, "empresabandera", fact_precios[empresabandera]))
+dim_provincia = DISTINCT(SELECTCOLUMNS(fact_precios, "provincia", fact_precios[provincia]))
+
+-- ============ RELACIONES (uno a muchos, filtro de dimension hacia hecho) ============
+-- dim_fecha[Date]            -> fact_precios[fecha_mes], predicciones[fecha_mes], proyeccion_2027[fecha_mes], cobertura_mensual[fecha_mes]
+-- dim_producto[producto]     -> fact_precios[producto], predicciones[producto], proyeccion_2027[producto]
+-- dim_bandera[empresabandera]-> fact_precios[empresabandera], predicciones[empresabandera], proyeccion_2027[empresabandera]
+-- dim_provincia[provincia]   -> fact_precios[provincia], predicciones[provincia], proyeccion_2027[provincia]
+
+-- ============ MEDIDAS: DATOS ============
+Registros = COUNTROWS(fact_precios)
+Estaciones = DISTINCTCOUNT(fact_precios[idempresa])
+Precio Mediano = MEDIAN(fact_precios[precio])
+Precio Relativo Promedio = AVERAGE(fact_precios[precio_relativo])
+Participacion Estaciones % =
+    DIVIDE([Estaciones], CALCULATE([Estaciones], ALL(fact_precios[empresabandera])))
+
+-- ============ MEDIDAS: REGRESION (filtrar predicciones[conjunto] = "Evaluacion 2026") ============
+MAE =
+    AVERAGEX(predicciones, ABS(predicciones[precio_predicho] - predicciones[precio]))
+RMSE =
+    SQRT(AVERAGEX(predicciones, (predicciones[precio_predicho] - predicciones[precio]) ^ 2))
+R2 =
+VAR media = AVERAGE(predicciones[precio])
+RETURN 1 - DIVIDE(
+    SUMX(predicciones, (predicciones[precio] - predicciones[precio_predicho]) ^ 2),
+    SUMX(predicciones, (predicciones[precio] - media) ^ 2))
+MAE (indice de mercado conocido) =
+    AVERAGEX(predicciones, ABS(predicciones[precio_predicho_indice_conocido] - predicciones[precio]))
+
+-- ============ MEDIDAS: CLASIFICACION (clase 1 = Cara) ============
+VP = COUNTROWS(FILTER(predicciones, predicciones[clase] = 1 && predicciones[clase_predicha] = 1))
+VN = COUNTROWS(FILTER(predicciones, predicciones[clase] = 0 && predicciones[clase_predicha] = 0))
+FP = COUNTROWS(FILTER(predicciones, predicciones[clase] = 0 && predicciones[clase_predicha] = 1))
+FN = COUNTROWS(FILTER(predicciones, predicciones[clase] = 1 && predicciones[clase_predicha] = 0))
+Exactitud = DIVIDE([VP] + [VN], [VP] + [VN] + [FP] + [FN])
+Precision Cara = DIVIDE([VP], [VP] + [FP])
+Recall Cara = DIVIDE([VP], [VP] + [FN])
+F1 Cara = DIVIDE(2 * [Precision Cara] * [Recall Cara], [Precision Cara] + [Recall Cara])
+
+-- ============ MEDIDAS: PROYECCION ============
+Precio Proyectado = AVERAGE(proyeccion_2027[precio_predicho])
+Aviso = "Escenario estadistico. No es dato real ni precio oficial."
+
+-- ============ YPF vs RESTO DEL MERCADO (tablas ypf_vs_resto_*, ypf_muestra_*, ypf_clasificacion_*) ============
+dim_region = DISTINCT(SELECTCOLUMNS(fact_precios, "region", fact_precios[region]))
+-- Relaciones adicionales (uno a muchos):
+-- dim_fecha[Date] -> ypf_vs_resto_celdas[fecha_mes], ypf_muestra_estaciones_region_mes[fecha_mes]
+-- dim_producto[producto] -> ypf_vs_resto_celdas[producto]
+-- dim_region[region] -> ypf_vs_resto_celdas[region], ypf_muestra_estaciones_region_mes[region], ypf_clasificacion_region_2026[region], fact_precios[region], predicciones[region]
+
+Dif YPF vs Resto % =
+    DIVIDE(
+        SUMX(ypf_vs_resto_celdas, ypf_vs_resto_celdas[dif_pct] * ypf_vs_resto_celdas[n_YPF]),
+        SUM(ypf_vs_resto_celdas[n_YPF]))
+Celdas comparables = COUNTROWS(ypf_vs_resto_celdas)
+% celdas YPF mas barata =
+    DIVIDE(COUNTROWS(FILTER(ypf_vs_resto_celdas, ypf_vs_resto_celdas[dif_pct] < 0)), COUNTROWS(ypf_vs_resto_celdas))
+Precio Mediano YPF = CALCULATE([Precio Mediano], fact_precios[grupo_bandera] = "YPF")
+Precio Mediano Resto = CALCULATE([Precio Mediano], fact_precios[grupo_bandera] = "Resto del mercado")
+% estaciones YPF en muestra =
+    DIVIDE(SUM(ypf_muestra_estaciones_region_mes[estaciones_ypf]), SUM(ypf_muestra_estaciones_region_mes[estaciones_total]))
+Aviso YPF =
+    "Comparacion de precios informados dentro de cada mes, producto y region. No es participacion de mercado. En 2026 hay pocos registros de YPF."
+-- Nota: el intervalo de confianza (ic95_inf / ic95_sup) viene calculado en ypf_vs_resto_resumen; no se recalcula con DAX.

@@ -1,0 +1,11 @@
+﻿control,resultado,detalle
+Sin nulos en las variables de los modelos (entrenamiento y 2026),OK,nulos = 0
+Sin duplicados por surtidor-producto-horario-mes,OK,duplicados = 0
+Clase Cara/Barata coincide con la regla (precio > mediana de producto y mes),OK,regla verificada en todas las filas
+Precio relativo = precio / mediana de producto y mes,OK,verificado
+Precios dentro de 50 y 10.000,OK,"minimo 239, maximo 3000"
+Banderas de 2026 presentes en el entrenamiento,OK,9 banderas
+Provincias y regiones de 2026 presentes en el entrenamiento,OK,sin categorias nuevas
+Todas las filas de 2026 tienen prediccion,OK,9515 de 9515
+"Precios recuperados con valores plausibles (0,4x a 2,5x la mediana)",OK,"mediana 0.988, rango 0.68-1.04"
+Archivos de Orange con las mismas filas que entrenamiento y 2026,OK,24563 y 9515 filas

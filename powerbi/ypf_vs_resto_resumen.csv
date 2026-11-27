@@ -1,0 +1,18 @@
+﻿nivel,grupo,celdas,registros_ypf,dif_pct,ic95_inf,ic95_sup,pct_celdas_ypf_mas_barata
+Total,Mes x producto x region,172,12564,-6.19,-6.86,-5.32,79.1
+Total,Sin junio 2025 (volcado masivo),146,2434,-3.31,-4.04,-2.41,76.0
+Total,Mes x producto x localidad,214,2944,-6.12,-7.09,-5.17,86.0
+Region,CENTRO,44,2794,-6.19,-7.01,-4.87,77.3
+Region,CUYO,24,1418,-5.84,-7.04,-3.23,75.0
+Region,NEA,8,910,-8.64,-9.95,-6.61,100.0
+Region,NOA,14,950,-3.14,-4.59,-1.38,85.7
+Region,PAMPEANA,58,4960,-6.78,-7.82,-4.48,70.7
+Region,PATAGONIA,24,1532,-5.08,-5.87,-4.01,95.8
+Producto,GNC,61,666,-1.07,-3.28,1.0,54.1
+Producto,Gas Oil Grado 2,26,2956,-6.9,-8.4,-4.33,92.3
+Producto,Gas Oil Grado 3,29,2982,-7.58,-8.3,-6.06,93.1
+Producto,Nafta (premium) de más de 95 Ron,28,2974,-6.55,-7.18,-5.55,100.0
+Producto,Nafta (súper) entre 92 y 95 Ron,28,2986,-4.9,-5.58,-3.17,85.7
+Anio,2024,13,102,1.59,-2.71,6.02,46.2
+Anio,2025,117,12006,-6.45,-7.11,-5.6,85.5
+Anio,2026,42,456,-1.29,-3.45,0.94,71.4
